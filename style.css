@@ -1,0 +1,74 @@
+﻿.btn {
+	display: inline-block;
+	border: 0.5px solid black;
+	text-align: center;
+}
+#logo {
+	position: absolute;
+	top:10%;
+	left:10%;
+	bottom: 15%;
+}
+input[type="text"], input[type="password"] {
+	border: 0 solid black;
+	border-bottom: 1px solid black;
+	width: 80%;
+	height: 20%;
+	margin: 0 10% 0 10%;
+	text-align: center;
+}
+input[type="submit"] {
+	border: 0 solid black;
+	background: rgba(0,0,0,0);
+	width: 50%;
+	height: 10%;
+	text-align: center;
+	margin: 0 25% 0 25%;
+}
+input[type="text"] {
+	position: absolute;
+	top: 10%;
+	bottom: 70%;
+}
+input[type="password"] {
+	position: absolute;
+	top: 35%;
+	bottom: 45%;
+}
+input[type="submit"] {
+	position: absolute;
+	top: 60%;
+	bottom: 30%;
+}
+a[id=Register] {
+	position: absolute;
+	top: 85%; 
+	width: 80%;
+	height: 10%;
+	margin: 0 10% 0 10%;
+}
+#login_form {
+	position: absolute;
+	top:10%;
+	left:40%;
+	bottom: 15%;
+	border: 0.5px solid black;
+	width: 384px;
+	height: 712px;
+}
+#view, #write {
+	position: absolute;
+	left:70%;
+	width: 384px;
+	height: 142px;
+	line-height: 142px;
+
+}
+#view {
+	top: 10%;
+	bottom: 75%;
+}
+#write {
+	top: 40%;
+	bottom: 45%;
+}
