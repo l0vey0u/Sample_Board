@@ -5,15 +5,15 @@
 	require_once('db_conn.php');
 	$id = $_POST['id'];
 	$id = preg_replace("/[^0-9A-Za-z]/", '', $id);
-	if(!get_magic_quotes_gpc()) {
-		$id = addslashes($id);
-	}
-	if($id!=$_POST['id']) {
+	$id = addslashes($id);
+	$id = preg_replace("/' '/", '', $id);
+	$pw = $_POST['pw'];
+	if($id!=$_POST['id'] or $id=='' or $pw=='') {
 		echo "<script language='javascript'>alert('비정상적인 입력');</script>";
 		mysqli_close($conn);
-		exit;
+		echo "<script> location.replace('main_page.php');</script>";
+		return -1;
 	}
-	$pw = $_POST['pw'];
 	$avail_query = "select * from USER where id='$id'";
 	$res = mysqli_query($conn, $avail_query);
 

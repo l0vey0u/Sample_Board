@@ -7,7 +7,8 @@
 	position: absolute;
 	top:10%;
 	left:10%;
-	bottom: 15%;
+	width: 384px;
+	height: auto;
 }
 input[type="text"], input[type="password"] {
 	border: 0 solid black;
@@ -51,10 +52,9 @@ a[id=Register] {
 	position: absolute;
 	top:10%;
 	left:40%;
-	bottom: 15%;
 	border: 0.5px solid black;
 	width: 384px;
-	height: 712px;
+	height: 576px;
 }
 #view, #write {
 	position: absolute;
