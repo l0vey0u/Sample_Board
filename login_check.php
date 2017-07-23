@@ -32,12 +32,15 @@
 			} 
 			else 
 			{
-				echo "<script language='javascript'>alert('니 계정 없데 ㅎㅎ 1');</script>";
+				$_SESSION['id'] = $id;
+				echo "<script language='javascript'>alert('비밀번호가 일치하지 않습니다.');</script>";
+				echo "<script> location.href='main_page.php';</script>";
 			}
 		}
 		else 
 		{
-			echo "<script language='javascript'>alert('니 계정 없데 ㅎㅎ 2');</script>";
+			echo "<script language='javascript'>alert('계정이 존재하지 않습니다.');</script>";
+			echo "<script> location.href='main_page.php';</script>";
 		}
 	}
 		mysqli_close($conn);
