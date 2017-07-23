@@ -1,7 +1,7 @@
 <?php
 if(strcmp("http://".getenv("HTTP_HOST")."/duckhoim/main_page.php",getenv("HTTP_REFERER"))!==0)
 {
-	echo '<script type="text/javascript"> alert("올바른 경로로 접근해주세요."); </script>';
+	echo '<script type="text/javascript"> alert("올바른 경로로 접근해주세요."); history.go(-1); </script>';
 	exit;
 } ?>
 <!DOCTYPE html>
