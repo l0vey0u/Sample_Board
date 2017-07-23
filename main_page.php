@@ -38,9 +38,21 @@ if(!(isset($_SESSION['is_login'])) or empty($_SESSION['is_login'])) {
 <script type = "text/javascript">
 function check_len()
 {
-	if(document.getElementsByName('id')[0].value.length > 0
-		&& document.getElementsByName('pw')[0].value.length > 0 ) {
-			if(document.getElementsByName('id')[0].value.length < 11)
+	var raw_id = document.getElementsByName('id')[0].value;
+	var raw_pw = document.getElementsByName('pw')[0].value;
+	var id = raw_id.replace(/\s/g, "");
+	id = id.replace(/[^a-zA-Z0-9]/g, "");
+	var pw = raw_pw.replace(/\s/g, "");
+	pw = pw.replace(/[^a-zA-Z0-9.]/g, "");
+	if(id.length !== raw_id.length) {
+		alert("ID에는 영어와 숫자만 올 수 있습니다.");
+		return false;
+	} else if(pw.length !== raw_pw.length) {
+		alert("PW에는 영어와 숫자, '.'만 올 수 있습니다.");
+		return false;
+	}
+	if(id.length > 0 && pw.length > 0 ) {
+			if(id.length < 11)
 				return true;
 			else {
 				alert("ID는 10글자이내로 입력해주세요.");
