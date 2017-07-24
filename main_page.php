@@ -19,12 +19,16 @@ if(!(isset($_SESSION['is_login'])) or empty($_SESSION['is_login'])) {
 	<?php 
 	if (!$_SESSION['is_login']) {
 		/* Login Form */
-	 echo '<form id=login_form action="login_check.php" method="post" onsubmit="return check_len()">
+		echo '<form id=login_form action="login_check.php" method="post" onsubmit="return check_len()">
 		<input name="id" type="text" placeholder="ID"/>
 		<input name="pw" type="password" placeholder="PW"/>
 		<input type="submit" value="login"/>
 		<a href="signup.php" id=Register class="btn"> JOIN </a>
 		</form>';
+		if(isset($_SESSION['id']) and !(empty($_SESSION['id']))) {
+			echo '<script type="text/javascript">
+				document.getElementsByName("id")[0].value="'.$_SESSION['id'].'"</script>';
+		}
 	} else {
 		echo $_SESSION['id']." 안뇽";
 		echo '<button type="button" onclick="log_out()"> 로그아웃 </button>';
